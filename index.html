@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Análise PDL 2026 - IDTECH | LiVe Consultoria</title>
+    
+    <!-- Importação de Fontes (Poppins e Merriweather) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        /* 1. NÚCLEO DA IDENTIDADE VISUAL (Tokens do Guia de Estilo V3) */
+        :root {
+            /* Paleta Principal */
+            --primary-bg: #06192a;     /* Azul Petróleo */
+            --card-bg: #0A243D;        /* Azul Escuro (Cards) */
+            --accent-color: #00e800;   /* Verde Vibrante */
+
+            /* Textos */
+            --text-primary: #ffffff;   /* Branco */
+            --text-muted: #f4f4f4;     /* Cinza Claro */
+            --text-subtle: #a0aecd;    /* Cinza Azulado (para parágrafos) */
+
+            /* Bordas e Efeitos */
+            --border-color: rgba(0, 232, 0, 0.2);
+            --accent-glow: 0 0 8px rgba(0, 232, 0, 0.7);
+            
+            /* Tipografia */
+            --font-primary: 'Poppins', sans-serif;
+            --font-secondary: 'Merriweather', serif;
+        }
+
+        /* 2. CONFIGURAÇÃO BASE (THE SETUP) */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: var(--primary-bg);
+            /* Textura de Fundo Obrigatória (Guia V3) */
+            background-image: url('https://www.transparenttextures.com/patterns/cubes.png');
+            background-attachment: fixed;
+            font-family: var(--font-primary);
+            color: var(--text-muted);
+            line-height: 1.7;
+        }
+
+        /* 3. ESTRUTURA E COMPONENTES */
+
+        /* Cabeçalho Fixo (Guia V3) */
+        header {
+            background-color: var(--card-bg);
+            border-bottom: 1px solid var(--border-color);
+            padding: 20px 0;
+            text-align: center;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+        }
+
+        header img.logo {
+            width: 180px;
+            /* Logo para fundo escuro (Guia V3) */
+            content: url('https://raw.githubusercontent.com/Clebito2/layout/main/Logo%20live%20oficial-36.png');
+        }
+
+        /* Container Principal (Guia V3) */
+        .container {
+            max-width: 900px; /* Largura de relatório */
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+
+        main {
+            width: 100%;
+        }
+
+        /* Card (Guia V3) */
+        .card {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 30px 40px;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Rodapé (Guia V3) */
+        footer {
+            text-align: center;
+            padding: 30px 20px;
+            margin-top: 40px;
+            background-color: var(--card-bg);
+            border-top: 1px solid var(--border-color);
+            font-size: 0.9rem;
+            color: var(--text-subtle);
+        }
+
+        /* 4. TIPOGRAFIA (Guia V3) */
+        h1, h2, h3, h4 {
+            font-family: var(--font-primary);
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-top: 0;
+            margin-bottom: 15px;
+        }
+
+        h1 {
+            font-size: 2.2rem; /* 35px */
+            color: var(--text-primary);
+            margin-bottom: 10px;
+        }
+
+        h2.subtitle {
+            font-family: var(--font-secondary);
+            font-size: 1.25rem; /* 20px */
+            color: var(--text-subtle);
+            font-weight: 400;
+            font-style: italic;
+            margin-bottom: 30px;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 20px;
+        }
+
+        h3.section-title {
+            font-size: 1.5rem; /* 24px */
+            color: var(--accent-color);
+            font-weight: 700;
+            margin-bottom: 20px;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 10px;
+        }
+
+        h4 {
+            font-size: 1.1rem; /* 18px */
+            color: var(--text-primary);
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+
+        p, li {
+            font-size: 1rem; /* 16px */
+            color: var(--text-muted);
+            margin-bottom: 15px;
+        }
+
+        ul, ol {
+            padding-left: 20px;
+            margin-top: 0;
+        }
+
+        li {
+            margin-bottom: 10px;
+        }
+
+        strong {
+            color: var(--text-primary);
+            font-weight: 600;
+        }
+        
+        /* Componente customizado para os Módulos */
+        .modulo-card {
+            background-color: rgba(0, 0, 0, 0.15);
+            border-left: 4px solid var(--accent-color);
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+        .modulo-card h4 {
+            color: var(--accent-color);
+            margin-bottom: 10px;
+        }
+        .modulo-card p {
+            font-size: 0.95rem;
+            margin-bottom: 5px;
+            color: var(--text-subtle);
+        }
+        .modulo-card strong {
+            color: var(--text-muted);
+        }
+
+    </style>
+</head>
+<body>
+
+    <!-- Cabeçalho (Guia V3) -->
+    <header>
+        <img src="https://raw.githubusercontent.com/Clebito2/layout/main/Logo%20live%20oficial-36.png" alt="Logo LiVe Consultoria" class="logo">
+    </header>
+
+    <!-- Conteúdo Principal -->
+    <main>
+        <div class="container">
+            
+            <!-- Título do Relatório -->
+            <h1>Proposta de Solução: PDL 2026 - IDTECH</h1>
+            <h2 class="subtitle">Foco: Saúde Mental, Antifragilidade e Alta Performance Humanizada</h2>
+
+            <!-- Card 1: Diagnóstico -->
+            <div class="card">
+                <h3 class="section-title">1. Diagnóstico e Contextualização</h3>
+                <p>Com base na análise do documento PDL 2026, identificamos que o IDTECH busca adequação à <strong>NR-1 (Portaria MTP nº 4.219/2022)</strong> e a construção de um ambiente psicologicamente seguro.</p>
+                <p>O desafio central não é apenas "evitar doenças", mas instrumentalizar os líderes para gerirem a pressão e a complexidade sem quebrarem (burnout) ou transferirem essa tensão para a equipe.</p>
+                <ul>
+                    <li><strong>Público-Alvo:</strong> Aproximadamente 120 líderes (Superintendentes a Supervisores).</li>
+                    <li><strong>Dor Principal:</strong> Necessidade de identificar riscos psicossiais e atuar preventivamente.</li>
+                    <li><strong>Objetivo Final:</strong> Redução de absenteísmo, melhoria do clima e liderança humanizada.</li>
+                </ul>
+            </div>
+
+            <!-- Card 2: A Solução LiVe -->
+            <div class="card">
+                <h3 class="section-title">2. A Solução LiVe: Liderança Antifrágil</h3>
+                <p>A LiVe Consultoria propõe adaptar a <strong>"Formação de Liderança Antifrágil"</strong> para atender aos 5 módulos solicitados pelo IDTECH.</p>
+                <p>A nossa filosofia de que "o antifrágil cresce com o caos" é a resposta ideal para a prevenção do burnout: não buscamos apenas resistir (resiliência), mas evoluir através dos desafios.</p>
+            </div>
+
+            <!-- Card 3: Alinhamento dos Módulos -->
+            <div class="card">
+                <h3 class="section-title">3. Alinhamento Estratégico dos Módulos</h3>
+                
+                <div class="modulo-card">
+                    <h4>Módulo 1: A Mentalidade do Líder</h4>
+                    <p><strong>Demanda IDTECH:</strong> Saúde Mental e Papel da Liderança (Sensibilização, psicodinâmica, limites do papel).</p>
+                    <p><strong>Entrega LiVe:</strong> Pilares "Liderança de Verdade" e "Mentalidade Antifrágil". Definição do papel do líder como agente de transformação, não terapeuta.</p>
+                </div>
+
+                <div class="modulo-card">
+                    <h4>Módulo 2: O Líder que se Lidera</h4>
+                    <p><strong>Demanda IDTECH:</strong> Autocuidado do Líder (Autoconsciência, reconhecimento de sinais de burnout no próprio líder).</p>
+                    <p><strong>Entrega LiVe:</strong> Foco em "Autogestão Emocional". Aplicação de ferramentas de análise de perfil para que o líder entenda seus gatilhos de estresse.</p>
+                </div>
+
+                <div class="modulo-card">
+                    <h4>Módulo 3: Comunicação que Constrói</h4>
+                    <p><strong>Demanda IDTECH:</strong> Reconhecimento e Conversas de Apoio (Escuta ativa, conversas difíceis, diagnóstico precoce).</p>
+                    <p><strong>Entrega LiVe:</strong> "Comunicação Assertiva" e "PNL". Treinamento prático (Role Play) usando a metodologia STAR adaptada para acolhimento.</p>
+                </div>
+
+                <div class="modulo-card">
+                    <h4>Módulo 4: Gestão de Crise e Decisão</h4>
+                    <p><strong>Demanda IDTECH:</strong> Prevenção e Gestão do Estresse (Gestão da reatividade, redução de reuniões ineficazes).</p>
+                    <p><strong>Entrega LiVe:</strong> Foco em "Liderar em Crises" e "Decisões Rápidas". Gestão de fluxo de trabalho para reduzir a sobrecarga cognitiva.</p>
+                </div>
+
+                <div class="modulo-card">
+                    <h4>Módulo 5: Cultura de Segurança</h4>
+                    <p><strong>Demanda IDTECH:</strong> Segurança Psicológica e Ambiente Saudável (Erro como aprendizado, confiança, pertencimento).</p>
+                    <p><strong>Entrega LiVe:</strong> Implementação da "Cultura Antifrágil". Estabelecer rituais de segurança psicológica para que a equipe fale sem medo.</p>
+                </div>
+            </div>
+
+            <!-- Card 4: Metodologia -->
+            <div class="card">
+                <h3 class="section-title">4. Metodologia de Execução</h3>
+                <p>Conforme solicitado pelo IDTECH, a LiVe possui total capacidade para execução híbrida:</p>
+                <ul>
+                    <li><strong>Formato:</strong> Encontros presenciais dinâmicos e sessões online para reforço (abrangendo os 16 participantes remotos).</li>
+                    <li><strong>Ferramentas Ativas:</strong> Role Play e Simulações de conversas difíceis com feedback imediato.</li>
+                </ul>
+            </div>
+
+            <!-- Card 5: Diferenciais -->
+            <div class="card">
+                <h3 class="section-title">5. Diferenciais Competitivos da LiVe</h3>
+                <ul>
+                    <li><strong>Abordagem Pragmática:</strong> Unimos saúde mental a <strong>negócio e performance</strong>. Mostraremos que saúde mental é igual a resultado financeiro e operacional.</li>
+                    <li><strong>Experiência Comprovada:</strong> A estrutura da "Formação Liderança Antifrágil" (5 encontros) alinha-se perfeitamente à carga horária e divisão modular.</li>
+                    <li><strong>Foco em Resultados:</strong> Nossa proposta já inclui etapas de <strong>Mensuração</strong> para acompanhar indicadores como turnover e absenteísmo.</li>
+                </ul>
+            </div>
+
+        </div>
+    </main>
+
+    <!-- Rodapé (Guia V3) -->
+    <footer>
+        <p>&copy; 2025 LiVe Consultoria. Todos os direitos reservados.</p>
+        <p>Desenvolvido sob o Guia de Estilo V3.</p>
+    </footer>
+
+</body>
+</html>
