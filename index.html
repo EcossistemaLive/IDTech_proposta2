@@ -55,18 +55,29 @@
         header {
             background-color: var(--card-bg);
             border-bottom: 1px solid var(--border-color);
-            padding: 20px 0;
-            text-align: center;
+            padding: 10px 40px; /* Reduzido */
             position: sticky;
             top: 0;
             z-index: 100;
             box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+            display: flex; /* Adicionado */
+            align-items: center; /* Adicionado */
+            justify-content: space-between; /* Adicionado */
         }
 
         header img.logo {
-            width: 180px;
+            width: 150px; /* Reduzido */
             /* Logo para fundo escuro (Guia V3) */
             content: url('https://raw.githubusercontent.com/Clebito2/layout/main/Logo%20live%20oficial-36.png');
+        }
+
+        /* Adicionado para o título no header */
+        header .header-title {
+            font-family: var(--font-primary);
+            font-size: 1.1rem; /* 18px */
+            font-weight: 600;
+            color: var(--text-muted);
+            margin: 0;
         }
 
         /* Container Principal (Guia V3) */
@@ -116,15 +127,17 @@
             margin-bottom: 10px;
         }
 
-        h2.subtitle {
+        /* Antigo h2.subtitle, agora H1 principal da página */
+        h1.subtitle-main {
             font-family: var(--font-secondary);
-            font-size: 1.25rem; /* 20px */
+            font-size: 1.5rem; /* 24px */
             color: var(--text-subtle);
             font-weight: 400;
             font-style: italic;
             margin-bottom: 30px;
             border-bottom: 1px solid var(--border-color);
             padding-bottom: 20px;
+            text-align: center; /* Centralizado */
         }
 
         h3.section-title {
@@ -191,15 +204,18 @@
     <!-- Cabeçalho (Guia V3) -->
     <header>
         <img src="https://raw.githubusercontent.com/Clebito2/layout/main/Logo%20live%20oficial-36.png" alt="Logo LiVe Consultoria" class="logo">
+        <span class="header-title">Proposta de Solução: PDL 2026 - IDTECH</span>
     </header>
 
     <!-- Conteúdo Principal -->
     <main>
         <div class="container">
             
-            <!-- Título do Relatório -->
-            <h1>Proposta de Solução: PDL 2026 - IDTECH</h1>
-            <h2 class="subtitle">Foco: Saúde Mental, Antifragilidade e Alta Performance Humanizada</h2>
+            <!-- Título do Relatório (Movido para o Header) -->
+            <!-- <h1>Proposta de Solução: PDL 2026 - IDTECH</h1> -->
+            
+            <!-- Antigo subtítulo, agora H1 principal -->
+            <h1 class="subtitle-main">Foco: Saúde Mental, Antifragilidade e Alta Performance Humanizada</h1>
 
             <!-- Card 1: Diagnóstico -->
             <div class="card">
@@ -208,7 +224,7 @@
                 <p>O desafio central não é apenas "evitar doenças", mas instrumentalizar os líderes para gerirem a pressão e a complexidade sem quebrarem (burnout) ou transferirem essa tensão para a equipe.</p>
                 <ul>
                     <li><strong>Público-Alvo:</strong> Aproximadamente 120 líderes (Superintendentes a Supervisores).</li>
-                    <li><strong>Dor Principal:</strong> Necessidade de identificar riscos psicossociais e atuar preventivamente.</li>
+                    <li><strong>Dor Principal:</strong> Necessidade de identificar riscos psicossiais e atuar preventivamente.</li>
                     <li><strong>Objetivo Final:</strong> Redução de absenteísmo, melhoria do clima e liderança humanizada.</li>
                 </ul>
             </div>
@@ -281,6 +297,7 @@
     <!-- Rodapé (Guia V3) -->
     <footer>
         <p>&copy; 2025 LiVe Consultoria. Todos os direitos reservados.</p>
+        <p>Desenvolvido sob o Guia de Estilo V3.</p>
     </footer>
 
 </body>
